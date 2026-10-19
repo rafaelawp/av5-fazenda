@@ -1,3 +1,5 @@
+#FEITO
+
 from config import *
 
 class Fazenda(db.Model): 
