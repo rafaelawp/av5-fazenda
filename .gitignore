@@ -1,0 +1,94 @@
+# ==========================================
+# REACT / NODE.JS
+# ==========================================
+# Dependências
+node_modules/
+/.pnp
+.pnp.js
+
+# Produção / Builds (React, Vite, Next.js)
+dist/
+build/
+out/
+.next/
+
+# Logs e Caches do Node
+*.log
+npm-debug.log*
+yarn-debug.log*
+pids
+.eslintcache
+.parcel-cache
+.turbo/
+
+# ==========================================
+# PYTHON
+# ==========================================
+# Ambientes Virtuais (Virtual Environments)
+venv/
+.venv/
+env/
+.env/
+ENV/
+env.bak/
+venv.bak/
+
+# Caches de Bytecode do Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Distribuição e Pacotes (Pip, Poetry)
+.eggs/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Testes e Cobertura (Pytest, Coverage)
+htmlcov/
+.tox/
+.nosexyproject/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.pytest_cache/
+.mypy_cache/
+
+# Jupyter Notebooks
+.ipynb_checkpoints
+
+# ==========================================
+# SEGURANÇA (Variáveis de Ambiente)
+# ==========================================
+# IMPORTANTE: Nunca envie arquivos com senhas e chaves de API para o repositório
+.env
+.env.local
+.env.*.local
+*.env
+secrets.json
+
+# ==========================================
+# IDEs E SISTEMA OPERACIONAL
+# ==========================================
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*.swp

@@ -1,17 +1,17 @@
-//nao fiz ainda - aparentemente falta só esse
+//nao fiz ainda - aparentemente falta só esse aaaa
 
 'use client';
 
 import { FormEvent, useEffect, useState,  } from 'react';
 import { useRouter } from "next/navigation";
 
-export default function FormIncluirPessoa() {
+export default function FormIncluirFazenda() {
 
   const [nome, setNome] = useState<string>("");
-  const [email, setEmail] = useState<string>("");
-  const [telefone, setTelefone] = useState<string>("");
-  const [login, setLogin] = useState<string>("");
-  const [senha, setSenha] = useState<string>("");
+  const [tipo, setTipo] = useState<string>("");
+  const [ano_fundacao, setAno_Fundacao] = useState<string>("");
+  const [nome_fazendeiro, setNome_Fazendeiro] = useState<string>("");
+  const [morcego_frutifero, setMorcego_Frutifero] = useState<string>("");
 
   const [message, setMessage] = useState("");
   const [error, setError] = useState("");
@@ -68,22 +68,22 @@ export default function FormIncluirPessoa() {
 
     try {
 
-      const resposta = await fetch(apiUrl + '/pessoa', {
+      const resposta = await fetch(apiUrl + '/fazenda', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
           'Authorization': `Bearer ${token}`
         },
-        body: JSON.stringify({ nome, email, telefone, login, senha })
+        body: JSON.stringify({ nome, tipo, ano_fundacao, nome_fazendeiro, morcego_frutifero})
       });
 
       switch (resposta.status) {
         case 200:
         case 201:
-          setMessage("Pessoa cadastrada com sucesso!");
+          setMessage("Fazenda cadastrada com sucesso!");
           // limpa os campos
-          setNome(""); setEmail(""); setTelefone("");
-          setLogin(""); setSenha("");
+          setNome(""); setTipo(""); setAno_Fundacao("");
+          setNome_Fazendeiro(""); setMorcego_Frutifero("");
           break;
         case 400:
           setError("Invalid data.");
@@ -124,7 +124,7 @@ return (
 
       <h1
       className="text-4xl font-bold tracking-tight text-gray-900 mb-4"
-      >Cadastrar Pessoa</h1>
+      >Cadastrar Fazenda</h1>
 
       {message && (
         <p className="text-green-600 font-medium">
@@ -146,28 +146,28 @@ return (
           className="rounded-lg border border-gray-300 px-4 py-3 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-200"
           required />
 
-        <input type="email" name="email" placeholder="Email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
+        <input type="tipo" name="tipo" placeholder="Tipo"
+          value={tipo}
+          onChange={(e) => setTipo(e.target.value)}
           required 
           className="rounded-lg border border-gray-300 px-4 py-3 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-200"
           />
 
-        <input type="text" name="telefone" placeholder="Telefone"
-          value={telefone}
-          onChange={(e) => setTelefone(e.target.value)} 
+        <input type="text" name="ano_fundacao" placeholder="Ano de Fundação"
+          value={ano_fundacao}
+          onChange={(e) => setAno_Fundacao(e.target.value)} 
           className="rounded-lg border border-gray-300 px-4 py-3 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-200"
           />
 
-        <input type="text" name="login" placeholder="Login"
-          value={login}
-          onChange={(e) => setLogin(e.target.value)}
+        <input type="text" name="nome_fazendeiro" placeholder="Nome do Fazendeiro"
+          value={nome_fazendeiro}
+          onChange={(e) => setNome_Fazendeiro(e.target.value)}
           className="rounded-lg border border-gray-300 px-4 py-3 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-200"
           required />
 
-        <input type="password" name="senha" placeholder="Senha"
-          value={senha}
-          onChange={(e) => setSenha(e.target.value)}
+        <input type="password" name="morcego_frutifero" placeholder="Presença de Morcegos Frutiferos"
+          value={morcego_frutifero}
+          onChange={(e) => setMorcego_Frutifero(e.target.value)}
           className="rounded-lg border border-gray-300 px-4 py-3 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-200"
           required />
 

@@ -13,7 +13,7 @@ def retornar_fazendas():
 
 @app.route('/fazenda', methods=['POST'])
 @jwt_required()
-def criar_pessoa():
+def criar_fazenda():
     dados = request.json
     
     if not dados or not dados.get('nome') or not dados.get('tipo') or not dados.get('ano_fundacao') or not dados.get('nome_fazendeiro') or not dados.get('morcegos_frutiferos'):
