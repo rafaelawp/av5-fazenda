@@ -1,6 +1,6 @@
 from config import *
 from models.fazenda import Fazenda
-import services.pessoa as fazenda_service
+import services.fazenda as fazenda_service
 
 @app.route('/fazendas', methods=['GET'])
 def retornar_fazendas():

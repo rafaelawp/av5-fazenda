@@ -9,7 +9,7 @@ from routes.login import *
 from routes.fazenda import *
 
 # cria o banco, caso não exista :-/
-# auxiliar_criar_bd()
+auxiliar_criar_bd()
 
 if __name__ == '__main__':
     app.run(debug=True)
